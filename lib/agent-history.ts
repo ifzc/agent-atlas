@@ -296,7 +296,7 @@ export const historyChapters: HistoryChapter[] = [
       branchLabel: '无工具调用 → END',
       caption: '到工具节点的边表示“有工具调用”；节点与条件边共同定义控制流。',
     },
-    note: '这一章可以多停留。先指 State：它装的是这次执行的消息和进度。模型节点写入响应，条件边检查有没有工具调用；有就执行工具并回到模型，没有就结束。强调 LangChain 以前也能循环，LangGraph 的重点是将状态与控制流显式化。',
+    note: '这一节可以多停留。先指 State：它装的是这次执行的消息和进度。模型节点写入响应，条件边检查有没有工具调用；有就执行工具并回到模型，没有就结束。强调 LangChain 以前也能循环，LangGraph 的重点是将状态与控制流显式化。',
     sources: [
       {
         title: 'LangGraph 官方发布文章',
@@ -473,7 +473,7 @@ export const historyChapters: HistoryChapter[] = [
       returnLabel: '下一会话读取进度 → 继续未完成工作',
       caption: '检查点帮助恢复运行状态；工作记录与产物帮助跨上下文理解任务。',
     },
-    note: '最后回到第一章。工具循环让 Agent 能行动，LangGraph 让过程可控制，检查点让执行可恢复，上下文组织与验证让长任务有机会持续推进。架构选择取决于任务复杂度，不需要把每个框架和协议都装进去。',
+    note: '最后回到总览。工具循环让 Agent 能行动，LangGraph 让过程可控制，检查点让执行可恢复，上下文组织与验证让长任务有机会持续推进。架构选择取决于任务复杂度，不需要把每个框架和协议都装进去。',
     sources: [
       {
         title: 'Effective harnesses for long-running agents',

@@ -868,3 +868,26 @@ kbd {
     scroll-behavior: auto !important;
   }
 }
+
+.course-back {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+  font-size: 13px;
+  color: #526057;
+  padding: 9px 10px;
+  border-radius: 6px;
+}
+.course-back:hover {
+  color: var(--primary);
+  background: var(--secondary);
+}
+@media (max-width: 800px) {
+  .course-back {
+    font-size: 12px;
+    padding: 8px 4px;
+  }
+  .history-header .history-brand strong {
+    font-size: 13px;
+  }
+}

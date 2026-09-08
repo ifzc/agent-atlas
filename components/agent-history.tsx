@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 import {
   useCallback,
   useEffect,
@@ -237,18 +239,18 @@ export default function AgentHistory() {
       style={{ '--chapter-count': total } as CSSProperties}
     >
       <header className="history-header">
-        <button
-          className="history-brand"
-          onClick={() => navigate(0)}
-          aria-label="Agent 技术演进：回到总览"
-        >
+        <Link className="history-brand" href="/" aria-label="返回课程目录">
           <span className="brand-symbol" aria-hidden="true">
             a.
           </span>
-          <strong>Agent 技术演进</strong>
-          <span className="brand-subtitle">从 Auto-GPT 到长任务架构</span>
-        </button>
+          <strong>第一章 · 技术架构演进</strong>
+          <span className="brand-subtitle">Agent 技术课</span>
+        </Link>
         <div className="header-actions">
+          <Link className="course-back" href="/" aria-label="返回课程目录">
+            <ChevronLeft size={17} />
+            <span>课程目录</span>
+          </Link>
           <button
             aria-label="参考资料"
             onClick={() => {
@@ -325,7 +327,7 @@ export default function AgentHistory() {
       <nav className="history-timeline" aria-label="Agent 技术演进时间轴">
         <div className="timeline-heading">
           <strong>演进时间轴</strong>
-          <span>点击章节跳转 · 按章节等距排列</span>
+          <span>点击小节跳转 · 按小节等距排列</span>
         </div>
         <div className="timeline-scroll" ref={timelineRef}>
           <div className="timeline-track">
@@ -363,14 +365,14 @@ export default function AgentHistory() {
           </span>
           <span className="keyboard-hint">
             <kbd>←</kbd>
-            <kbd>→</kbd> 切换章节
+            <kbd>→</kbd> 切换小节
           </span>
         </div>
         <div className="transport">
           <button
             disabled={index === 0}
             onClick={() => navigate(index - 1)}
-            aria-label="上一章"
+            aria-label="上一节"
           >
             <ChevronLeft size={22} />
           </button>
@@ -396,7 +398,7 @@ export default function AgentHistory() {
           <button
             disabled={last}
             onClick={() => navigate(index + 1)}
-            aria-label="下一章"
+            aria-label="下一节"
           >
             <ChevronRight size={22} />
           </button>
@@ -409,9 +411,9 @@ export default function AgentHistory() {
               );
               resetElapsed();
             }}
-            title="切换每章播放时长"
+            title="切换每节播放时长"
           >
-            {duration} 秒 / 章
+            {duration} 秒 / 节
           </button>
           <button
             className={notes ? 'selected' : ''}
@@ -424,7 +426,7 @@ export default function AgentHistory() {
         </div>
         <progress
           className="playback-progress"
-          aria-label="当前章节播放进度"
+          aria-label="当前小节播放进度"
           max={duration}
           value={Math.min(duration, elapsed)}
         />
