@@ -1,5 +1,5 @@
-import AgentExplorer from '@/components/agent-explorer';
+import AgentHistory from '@/components/agent-history';
 
 export default function Home() {
-  return <AgentExplorer />;
+  return <AgentHistory />;
 }
